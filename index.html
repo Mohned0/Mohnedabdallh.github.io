@@ -1,1 +1,111 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohaned Abdallh | GIS Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css" rel="stylesheet"/>
+</head>
+<body>
+  <div id="map"></div>
+  <div class="overlay">
+    <header class="centered">
+      <img src="profile.jpg" alt="Mohaned Abdallh" class="profile-pic"/>
+      <h1>Mohaned Abdallh Musa</h1>
+      <p>GIS Specialist | Surveying Engineer | Riyadh, Saudi Arabia</p>
+      <p><strong>Email:</strong> mohnedabdllh@gmail.com | <strong>Phone:</strong> +966569849279</p>
+      <p><a href="https://www.linkedin.com/in/mohaned-abdallh-6a75941ab" target="_blank">LinkedIn Profile</a></p>
+    </header>
+
+    <section class="projects">
+      <h2>My Projects</h2>
+      <div class="project-list">
+
+        <div class="project">
+          <h3>NDVI Vegetation Analysis – Al Managel Area</h3>
+          <p>Generated NDVI maps to assess vegetation conditions using satellite imagery and ArcGIS tools during the flood season.</p>
+          <img src="ndvi_map.jpg" alt="NDVI Vegetation Map" class="project-img"/>
+        </div>
+
+        <div class="project">
+          <h3>COVID-19 GIS Dashboard for Sudan</h3>
+          <p>Built an interactive GIS-based dashboard to monitor and visualize COVID-19 case data across Sudan using Excel and ArcGIS Online.</p>
+        </div>
+
+        <div class="project">
+          <h3>Khartoum Public Transport Network Analysis</h3>
+          <p>GIS-based network analysis to assess and optimize routes using ArcGIS Network Analyst.</p>
+        </div>
+
+      </div>
+    </section>
+    
+<section id="certificates" style="padding: 50px 20px; background-color: #111; color: white;">
+  <h2 style="text-align: center; color: #4ea1f3;">My Certificates</h2>
+
+  <div style="max-width: 800px; margin: auto; padding: 20px; background-color: #1a1a1a; border-radius: 10px;">
+    <h3 style="color: #4ea1f3;">GIS, Mapping, and Spatial Analysis</h3>
+    <p><strong>Institution:</strong> University of Toronto (via Coursera)</p>
+    <p><strong>Date:</strong> December 21, 2024</p>
+    <p>This certificate was awarded upon successful completion of a specialization focused on GIS, mapping, spatial thinking, and geospatial analysis using ArcGIS and other tools.</p>
+    <img src="certificates.jpg" alt="certificates.jpg" style="width: 100%; max-width: 500px; margin-top: 15px; border-radius: 8px;">
+  </div>
+</section>
+   
+<div id="cvModal" style="display:none; position:fixed; z-index:10; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8);">
+  <div style="background-color:#fff; margin:5% auto; padding:20px; border-radius:10px; width:90%; max-width:800px; position:relative;">
+    
+  
+    <span onclick="document.getElementById('cvModal').style.display='none'" 
+          style="position:absolute; top:10px; right:20px; color:#000; font-size:34px; cursor:pointer;">&times;</span>
+    
+  
+    <h2 style="color:#000;">My CV</h2>
+    <iframe src="My_CV.pdf" width="100%" height="500px" style="border:none;"></iframe>
+  </div>
+</div>
+
+<button onclick="document.getElementById('certificatesModal').style.display='none'" 
+        style="padding:20px 40px; background:#4ea1f3; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">
+  🎓 Show Certificates
+</button>
+
+<button onclick="document.getElementById('certificatesModal').style.display='block'" 
+        style="padding:20px 40px; background:#007bff; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">
+  📄  View My CV
+</button>
+<div id="certificatesModal" style="display:none; position:fixed; z-index:10; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8);">
+  <div style="background-color:#111; margin:10% auto; padding:20px; border-radius:10px; width:90%; max-width:600px; color:white; position:relative;">
+  <img src="certificates2.jpg" alt="Certificate 2" style="width:90%; max-width:600px; margin:10px 0; border-radius:8px;">
+  <img src="certificates3.jpg" alt="Certificate 3" style="width:90%; max-width:600px; margin:10px 0; border-radius:8px;">
+    <span onclickModal()="document.getElementById('certificates.jpgl').style.display='none'" 
+          style="position:absolute; top:10px; right:20px; color:#ccc; font-size:34px; cursor:pointer;">&times;</span>
+    <h2 style="color:#4ea1f3;">My Certificates</h2>
+    <h3>GIS, Mapping, and Spatial Analysis</h3>
+    <p><strong>Institution:</strong> University of Toronto (via Coursera)</p>
+    <p><strong>Date:</strong> December 21, 2024</p>
+    <p>This certificate was awarded upon successful completion of a specialization focused on GIS, mapping, spatial thinking, and geospatial analysis using ArcGIS and other tools.</p>
+    <img src="certificates.jpg" alt="certificates.jpg" style="width:100%; max-width:500px; margin-top:15px; border-radius:8px;">
+  </div>
+</div>
+    <footer>
+      <p>© 2025 Mohaned Abdallh. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.js"></script>
+  <script>
+    mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/dark-v11',
+      center: [39.8579, 21.3891],
+      zoom: 2,
+      interactive: false
+    });
+    map.on('load', () => map.resize());
+  </script>
+</body>
+</html>
